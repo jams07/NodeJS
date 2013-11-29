@@ -1,0 +1,30 @@
+html
+	head
+		title formulario
+	body
+		form(action='saveCustomer' method='post')
+			table(border='2')
+				tr       
+					td Identificacion
+					td
+						input(type='hidden', name='id', value=funcionesDB.id)
+						label #{funcionesDB.id}
+						br
+				tr       
+					td Nombre
+					td
+						input(type='text', name='names', value=funcionesDB.name)
+						br
+				tr       
+					td Direccion
+					td
+						input(type='text', name='direccion', value=funcionesDB.direccion)
+						br
+				tr       
+					td Telefono
+					td
+						input(type='text', name='telefono', value=funcionesDB.telefono)
+						br
+				tr
+					td(colspan='2')
+						input(type='submit', value='Guardar')	

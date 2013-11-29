@@ -1,0 +1,32 @@
+html
+	head
+		title Lista de Usuarios
+	body
+		table
+			thead
+				tr
+					td Identificacion
+					td Nombres y Apellidos
+					td Telefono/Celular
+					td Direccion
+					td
+					td
+			if(typeof(funcionesDB) != "undefined")
+				each item in funcionesDB
+					tr
+						td #{item.id}
+						td #{item.name}
+						td #{item.telefono}
+						td #{item.direccion}
+						td
+							form(action='loadCustomer' method='post')
+								input(type='hidden' value=item.id name='id')
+								input(type='submit' value='Editar')
+						td
+							form(action='deleteCustomer' method='post')
+								input(type='hidden' value=item.id name='id')
+								input(type='submit' value='Eliminar')
+		
+		form(action='newCustomer' method='get')
+			input(type='submit' value='Nuevo Usuario')
+
